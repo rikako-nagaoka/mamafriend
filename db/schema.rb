@@ -15,11 +15,15 @@ ActiveRecord::Schema.define(version: 20170531081553) do
 
   create_table "mamas", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.string   "adress",     limit: 255
+    t.string   "adress1",    limit: 255
+    t.string   "adress2",    limit: 255
     t.integer  "age",        limit: 4
     t.integer  "numchild",   limit: 4
     t.integer  "work",       limit: 4
+    t.integer  "private",    limit: 4
     t.integer  "frequency",  limit: 4
+    t.integer  "ivent",      limit: 4
+    t.integer  "nickname",   limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
