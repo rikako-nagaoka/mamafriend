@@ -18,6 +18,17 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
+      t.string    :name
+      t.string    :adress1
+      t.string    :adress2
+      t.integer   :age
+      t.integer   :numchild
+      t.integer   :work
+      t.integer   :private
+      t.integer   :frequency
+      t.integer   :ivent
+      t.integer   :nickname
+      t.text      :comment
 
       ## Confirmable
       # t.string   :confirmation_token
@@ -31,7 +42,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
 
-      t.timestamps null: false
+      t.timestamps
     end
 
     add_index :users, :email,                unique: true
