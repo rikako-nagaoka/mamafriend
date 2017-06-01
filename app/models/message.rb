@@ -1,3 +1,3 @@
 class Message < ActiveRecord::Base
-  belongs_to :mama
+  belongs_to :user
 end
