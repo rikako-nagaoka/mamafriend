@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+ <div class="jumbotron">
+   <div class="container-fluid">
+    <h1>ようこそ！ママ友広場へ</h1>
+     <p>ママ友が欲しいけど、面倒な付き合いはしたくないと思っているあなた。
+        大丈夫です。事前にどんなママとどんな付き合い方がしたいのか情報を交換して、安心してママ友を見つけましょう</p>
+   <div >
+  <p>早速ママ友を探してみましょう！</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">ママ友を探す</a></p>
+   </div>
+ </div>
+
+ <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
+ <%= @users.each do |user| %>
+  <Li>
+                   <div class="thumbnail__caption">
+                      <h3 class="text-xsmall text-overflow" title="<%= user.name %>">
+                        <%= user.name %>
+                        </h3>
+                        </div>
+     </li>
+    <% end %>
+ </ul>
+
+
+</div>
