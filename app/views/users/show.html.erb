@@ -27,8 +27,8 @@
      </li>
      <li>
          <div class="thumbnail__caption">
-         <h3 class="text-xsmall text-overflow" title="<%= @user.numchild %>">
-             子供の人数<%= @user.numchild %>人
+         <h3 class="text-xsmall text-overflow" title="<%= @user.age %>">
+             <%= @user.numchild %>才
           </h3>
           </div>
      </li>
@@ -36,6 +36,53 @@
          <div class="thumbnail__caption">
          <h3 class="text-xsmall text-overflow" title="<%= @user.numchild %>">
              子供の人数<%= @user.numchild %>人
+          </h3>
+          </div>
+     </li>
+    <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.work %>">
+             <%= @user.work %>
+          </h3>
+          </div>
+     </li>
+    <li>
+    <% if @user.work == "兼業主婦" %>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.private %>">
+         自分や旦那さんの仕事（会社名等）話しても大丈夫です。
+             <%= @user.private %>
+          </h3>
+          </div>
+     </li>
+     <% end %>
+    <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.frequency %>">
+             <%= @user.frequency %>
+          </h3>
+          </div>
+     </li>
+    <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.ivent %>">
+             お誕生日会やイベント事があったら参加したい？
+             <%= @user.ivent %>
+          </h3>
+          </div>
+     </li>
+    <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.nickname %>">
+        名前は○○ちゃんママやあだ名じゃなくて苗字で呼んで欲しいです。
+             <%= @user.nickname %>
+          </h3>
+          </div>
+     </li>
+    <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.comment %>">
+             <%= @user.comment %>
           </h3>
           </div>
      </li>
