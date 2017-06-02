@@ -23,11 +23,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string    :adress2
       t.integer   :age
       t.integer   :numchild
-      t.integer   :work
-      t.integer   :private
-      t.integer   :frequency
-      t.integer   :ivent
-      t.integer   :nickname
+      t.string   :work
+      t.string   :private
+      t.text   :frequency
+      t.string   :ivent
+      t.string   :nickname
       t.text      :comment
 
       ## Confirmable
