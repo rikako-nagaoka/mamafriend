@@ -1,0 +1,41 @@
+<div class="container-fluid">
+<span class="label label-warning"><%= @user.name %>"さんのページ</span>
+
+
+   <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
+   
+     <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.name %>">
+             名前：<%= @user.name %>
+          </h3>
+          </div>
+     </li>
+     <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.adress1 %>">
+             住所（都道府県）<%= @user.adress1 %>
+          </h3>
+          </div>
+     </li>
+     <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.adress2 %>">
+             住所（市区町村）<%= @user.adress2 %>　
+          </h3>
+          </div>
+     </li>
+     <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.numchild %>">
+             子供の人数<%= @user.numchild %>人
+          </h3>
+          </div>
+     </li>
+    <li>
+         <div class="thumbnail__caption">
+         <h3 class="text-xsmall text-overflow" title="<%= @user.numchild %>">
+             子供の人数<%= @user.numchild %>人
+          </h3>
+          </div>
+     </li>
