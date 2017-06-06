@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container-fluid">
 <header class="header header--section">
 <h2 class="text-middle">
 <i class="icon-movie color-gray-light"></i>検索結果
@@ -9,8 +9,8 @@
    <% @users.each do |user| %>
      <li>
          <div class="thumbnail__caption">
-         <a href="/users/<%= user.id %>" class="text-xsmall text-overflow" title="<%= user.name %>">
-             <%= user.name %>　さん
+         <a href="/users/<%= user.id %>" class="text-xsmall text-overflow" title="<%= user.nickname %>">
+             <%= user.nickname %>　さん
           <a>
           </div>
      </li>

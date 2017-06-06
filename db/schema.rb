@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170601082453) do
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
     t.string   "name",                   limit: 255
+    t.string   "nickname",               limit: 255
     t.string   "adress1",                limit: 255
     t.string   "adress2",                limit: 255
     t.integer  "age",                    limit: 4
@@ -56,7 +57,7 @@ ActiveRecord::Schema.define(version: 20170601082453) do
     t.string   "private",                limit: 255
     t.text     "frequency",              limit: 65535
     t.string   "ivent",                  limit: 255
-    t.string   "nickname",               limit: 255
+    t.string   "lastname",               limit: 255
     t.text     "comment",                limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -19,6 +19,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
       t.string    :name
+      t.string    :nickname
       t.string    :adress1
       t.string    :adress2
       t.integer   :age
@@ -27,7 +28,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :private
       t.text   :frequency
       t.string   :ivent
-      t.string   :nickname
+      t.string   :lastname
       t.text      :comment
 
       ## Confirmable
