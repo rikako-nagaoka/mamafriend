@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'users#index'
   resources :users, only: [:show, :new, :create, :update]do
+   resources :messages, only: [:new, :create]
       collection do
       get 'search'
       get 'search_result'
