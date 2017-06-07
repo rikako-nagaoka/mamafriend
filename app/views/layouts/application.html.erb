@@ -49,9 +49,11 @@
         <button type="ママ友を探す" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li><%=link_to 'サインアウト', "/users/sign_out", method: :delete %></li>
+        <li><a href="/users/new">アカウント</a></li>
+      <% end %>
         <li><a href="#">サインイン</a></li>
-        <li><a href="#">ログアウト </a></li>
-        <li><a href="/users/new">マイページ </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
