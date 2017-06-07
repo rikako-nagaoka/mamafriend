@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/users#">ママ友広場</a>
+      <a class="navbar-brand" href="/">ママ友広場</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,8 +52,11 @@
       <% if user_signed_in? %>
         <li><%=link_to 'サインアウト', "/users/sign_out", method: :delete %></li>
         <li><a href="/users/new">アカウント</a></li>
+      <% else %>
+        <li><a href="/users/sign_in">サインイン</a></li>
+        <li><a href="/users/sign_up">新規登録</a></li>
       <% end %>
-        <li><a href="#">サインイン</a></li>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
