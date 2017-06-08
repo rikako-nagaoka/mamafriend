@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'users#index'
+  resources :messages, only: [:create, :show]
   resources :users, only: [:show, :new, :create, :update]do
-   resources :messages, only: [:new, :create]
       collection do
       get 'search'
       get 'search_result'
       end
-    end
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

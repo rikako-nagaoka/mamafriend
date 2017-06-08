@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601082453) do
+ActiveRecord::Schema.define(version: 20170608074539) do
+
+  create_table "group_users", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "group_id",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "group_users", ["group_id"], name: "index_group_users_on_group_id", using: :btree
+  add_index "group_users", ["user_id"], name: "index_group_users_on_user_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mamas", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -30,10 +46,11 @@ ActiveRecord::Schema.define(version: 20170601082453) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer  "mama_id",    limit: 4
-    t.text     "message",    limit: 65535
+    t.integer  "sender_id",   limit: 4
+    t.text     "message",     limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "receiver_id", limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,4 +83,6 @@ ActiveRecord::Schema.define(version: 20170601082453) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
 end

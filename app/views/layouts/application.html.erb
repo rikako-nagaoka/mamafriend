@@ -50,6 +50,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
+        <li><a href="">メッセージを確認</a></li>
         <li><%=link_to 'サインアウト', "/users/sign_out", method: :delete %></li>
         <li><a href="/users/new">アカウント</a></li>
       <% else %>

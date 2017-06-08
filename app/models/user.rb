@@ -3,5 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :messagess
+  has_many :messages
+  has_many :group, through: :group_user
+  has_many :group_user
 end

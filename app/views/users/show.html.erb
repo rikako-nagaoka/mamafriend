@@ -87,4 +87,8 @@
           </div>
      </li>
 
-     <button type="button" class="btn btn-lg">友達になる</button>
+     <div>
+     <% if user_signed_in? %>
+    <p><a class="btn btn-primary btn-lg" href="/messages/show" role="button">このママにメッセージを送る</a></p>
+      <% end %>
+      </div>
