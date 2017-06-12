@@ -1,0 +1,11 @@
+<h5>以下のママからメッセージが届いています<h5>
+<ul>
+<% @messages.each do |message| %>
+<li>
+<a href="/users/<%= message.user.id %>/messages/detail">
+<%= message.user.nickname %>さん</a>
+</li>
+<% end %>
+</ul>
+
+

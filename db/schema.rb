@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608074539) do
+ActiveRecord::Schema.define(version: 20170612094957) do
 
   create_table "group_users", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -29,29 +29,15 @@ ActiveRecord::Schema.define(version: 20170608074539) do
     t.datetime "updated_at"
   end
 
-  create_table "mamas", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "adress1",    limit: 255
-    t.string   "adress2",    limit: 255
-    t.integer  "age",        limit: 4
-    t.integer  "numchild",   limit: 4
-    t.integer  "work",       limit: 4
-    t.integer  "private",    limit: 4
-    t.integer  "frequency",  limit: 4
-    t.integer  "ivent",      limit: 4
-    t.integer  "nickname",   limit: 4
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "receiver_id", limit: 4
+    t.text     "body",        limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "comment",    limit: 65535
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.integer  "sender_id",   limit: 4
-    t.text     "message",     limit: 65535
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "receiver_id", limit: 4
-  end
+  add_index "messages", ["user_id"], name: "fk_rails_273a25a7a6", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
@@ -85,4 +71,5 @@ ActiveRecord::Schema.define(version: 20170608074539) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "messages", "users"
 end
