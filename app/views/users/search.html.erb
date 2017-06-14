@@ -2,8 +2,8 @@
 
 <div class="row">
 <%= form_tag('/users/search_result', method: :get) do %>
-    <div class="col-sm-2">都道府県</div>
-    <div class="form-tag input-sm" style="padding: 3px;">
+    <div class="col-sm-4">都道府県</div>
+    <div class="form-tag input-sm" style="padding: 2px;">
       <select name="add">  
 <option value="">都道府県をお選びください。</option>  
 <optgroup label="北海道・東北">  
@@ -72,13 +72,13 @@
 </select>
 </div>
 </div>
-<div class="col-sm-2">年齢を入力してください</div>
+<div class="col-sm-4">年齢を入力してください</div>
 <div class="form-tag input-sm" style="padding: 3px;">
 <input type="number" name="agemin">才から
 <input type="number" name="agemax">才まで
 </div>
 </div>
-<div class="col-sm-2">仕事</div>
+<div class="col-sm-4">仕事</div>
 <div class="form-tag input-sm" style="padding: 3px;">
 <select name="work">  
 <option value="">お仕事を選択してください。</option>  
@@ -86,8 +86,10 @@
     <option value="兼業主婦">兼業主婦</option>  
 </select>
 </div>
-</div>
+</div><br>
+<div class="center-block" >
 <%= submit_tag "検索" %>
+</div>
 <% end %>
 </div>
 

@@ -1,11 +1,11 @@
 <div class="container-fluid">
-<span class="label label-warning"><%= @user.name %>"さんのページ</span>
+<span class="label label-warning"><%= @user.nickname %>"さんのページ</span>
 
 
-   <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
+   <ul style="list-style:none;">
    
      <li>
-         <div class="thumbnail__caption">
+         <div>
          <h3 class="text-xsmall text-overflow" title="<%= @user.nickname %>">
              名前：<%= @user.nickname %>
           </h3>
@@ -66,7 +66,7 @@
     <li>
          <div class="thumbnail__caption">
          <h3 class="text-xsmall text-overflow" title="<%= @user.ivent %>">
-             お誕生日会やイベント事があったら参加したい？
+             お誕生日会やイベント事には参加したい？
              <%= @user.ivent %>
           </h3>
           </div>
@@ -74,7 +74,7 @@
     <li>
          <div class="thumbnail__caption">
          <h3 class="text-xsmall text-overflow" title="<%= @user.lastname %>">
-        名前は○○ちゃんママやあだ名じゃなくて苗字で呼んで欲しいです。
+        お名前は何て呼べばいいですか。
              <%= @user.lastname %>
           </h3>
           </div>
