@@ -1,5 +1,6 @@
 <div class="container-fluid">
-<h2><%= current_user.nickname %>さんと<%= @user.nickname %>さんのメッセージルーム<h2>
+<span style="border: 2px solid #4169e1">
+<%= current_user.nickname %>さんと<%= @user.nickname %>さんのメッセージルーム</span>
  <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
    <% @messages.each do |message| %>
     <li>
@@ -15,9 +16,11 @@
  <%= f.text_area :body, class: "form-conrol" %>
   </div>
   </div>
+  <br><br>
         <div class="form-group">
         <%= f.submit "送信", class: "btn btn-primary withripple" %>
       </div>
     <% end %>
 </div>
 
+s

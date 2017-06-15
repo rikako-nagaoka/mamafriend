@@ -1,7 +1,16 @@
-<h5>以下のママからメッセージが届いています<h5>
+<div class="container-fluid">
+<h3>以下のママからメッセージが届いています</h3></div>
+<tr align="center" valign="middle">
+ <td height="30" colspan="7" valign="top">
+ <%= image_tag ('f_border.gif') %>
+ <%= image_tag ('f_border.gif') %>
+ <%= image_tag ('f_border.gif') %>
+</td>
+</tr>
+<br><br>
 <ul>
 <% @messages.each do |message| %>
-<li>
+<li><tr align="center" valign="middle">
 <a href="/users/<%= message.user.id %>/messages/detail">
 <%= message.user.nickname %>さん</a>
 </li>

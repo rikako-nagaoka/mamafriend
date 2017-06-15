@@ -1,8 +1,8 @@
 <div class="container-fluid">
 
  <div class="jumbotron" body bgcolor="#fff0f5" >
-   <div class="container-fluid">
-    <h1>ようこそ！ママ友広場へ</h1>
+   <div class="container-fluidyokoso">
+    <h1>ようこそ！ママトモひろばへ</h1>
      <p>ママ友が欲しいけど、面倒な付き合いはしたくないと思っているあなた。
         大丈夫です。事前にどんなママとどんな付き合い方がしたいのか情報を交換して、安心してママ友を見つけましょう。</p><br>
      <div >
@@ -17,9 +17,9 @@
 
  <ul style="list-style:none;">
    <% @users.each do |user| %>
-   <div class="row">
-   <div class="col-sm-4 block">
-           <div class="panel panel-default">
+   <div>
+   <div class="col-sm-4">
+           <div class="panel panel-default"style="border: 10px double #cccccc; padding: 10px; background: #ffffff;">
           <div class="panel-body">
              <li>
                  <a href="/users/<%= user.id %>" title="<%= user.nickname %>">

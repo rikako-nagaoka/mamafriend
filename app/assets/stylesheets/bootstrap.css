@@ -4998,6 +4998,11 @@ a.badge:focus {
     font-size: 63px;
   }
 }
+
+.container-fluid .jumbotron{
+  background-color: #fff0f5;
+}
+
 .thumbnail {
   display: block;
   padding: 4px;

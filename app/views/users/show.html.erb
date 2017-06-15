@@ -1,5 +1,8 @@
 <div class="container-fluid">
-<span class="label label-warning"><%= @user.nickname %>"さんのページ</span>
+<div class="showname-box-1" style="border: 10px double #cccccc; padding: 10px; background: #ffffff;">
+<h3><%= @user.nickname %>さんのページ<h3>
+
+</div>
 
 
    <ul style="list-style:none;">
@@ -7,7 +10,7 @@
      <li>
          <div>
          <h3 class="text-xsmall text-overflow" title="<%= @user.nickname %>">
-             名前：<%= @user.nickname %>
+             名前　<%= @user.nickname %>
           </h3>
           </div>
      </li>
@@ -82,12 +85,12 @@
     <li>
          <div class="thumbnail__caption">
          <h3 class="text-xsmall text-overflow" title="<%= @user.comment %>">
-             <%= @user.comment %>
+             一言メッセージ　　<%= @user.comment %>
           </h3>
           </div>
      </li>
-
-     <div>
+<br>
+     <div class="prof">
      <% if user_signed_in? %>
     <p><a class="btn btn-primary btn-lg" href="/users/<%= @user.id %>/messages/detail" role="button">このママにメッセージを送る</a></p>
       <% end %>

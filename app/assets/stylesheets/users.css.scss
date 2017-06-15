@@ -2,3 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+  font-family: 'funwari';
+  src: font-url('funwari-round.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container-fluidyokoso h1 {
+  font-family: 'funwari';
+  color: OrangeRed;
+}
+
+.showname-box-1 h2 {
+  font-family:"丸ゴシック体" ,sans-serif;
+}
+
+.prof a {
+  text-align : center ; }
+
+.form-group {
+  text-align : center ;
+}
