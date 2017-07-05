@@ -1,6 +1,13 @@
 <div class="container-fluid">
-<span style="border: 2px solid #4169e1">
-<%= current_user.nickname %>さんと<%= @user.nickname %>さんのメッセージルーム</span>
+<h3><%= current_user.nickname %>さんと<%= @user.nickname %>さんのメッセージルーム
+</h3>
+<tr align="center" valign="middle">
+ <td height="30" colspan="7" valign="top">
+ <%= image_tag ('f_border.gif') %>
+ <%= image_tag ('f_border.gif') %>
+ <%= image_tag ('f_border.gif') %>
+</td>
+</tr>
  <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
    <% @messages.each do |message| %>
     <li>

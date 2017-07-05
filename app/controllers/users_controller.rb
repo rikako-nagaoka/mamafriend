@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @group = Group.new
   end
 
   def search
@@ -20,14 +21,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(create_params)
-    redirect_to action: :index
+    current_user.update(update_params)
+    redirect_to root_path
   end
 
 
 
 private
-  def create_params
+  def update_params
     params.require(:user).permit(:nickname, :adress1, :adress2, :age, :numchild, :work, :private, :frequeny, :ivent, :lastname, :comment)
   end
 

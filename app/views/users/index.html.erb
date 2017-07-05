@@ -19,8 +19,13 @@
    <% @users.each do |user| %>
    <div>
    <div class="col-sm-4">
-           <div class="panel panel-default"style="border: 10px double #cccccc; padding: 10px; background: #ffffff;">
+           <div class="mama-box">
           <div class="panel-body">
+            <li>
+              <h3 datetime="<%= user.created_at %>">
+              <%= time_ago_in_words(user.created_at) %>前
+              <h3>
+            </li>
              <li>
                  <a href="/users/<%= user.id %>" title="<%= user.nickname %>">
                      <%= user.nickname %>　さん

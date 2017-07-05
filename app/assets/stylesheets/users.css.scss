@@ -24,3 +24,11 @@
 .form-group {
   text-align : center ;
 }
+
+.mama-box {
+    background: -webkit-repeating-linear-gradient(-45deg, #f5edfd, #f5edfd 5px, #fdfcff 5px, #fdfcff 10px);
+    background: repeating-linear-gradient(-45deg, #f5edfd, #f5edfd 5px, #fdfcff 5px, #fdfcff 10px);
+    color: #4a1086;
+    margin: 2em 0;
+    padding: 1px;
+}

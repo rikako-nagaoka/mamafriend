@@ -90,8 +90,12 @@
           </div>
      </li>
 <br>
-     <div class="prof">
-     <% if user_signed_in? %>
-    <p><a class="btn btn-primary btn-lg" href="/users/<%= @user.id %>/messages/detail" role="button">このママにメッセージを送る</a></p>
+    <div class="prof">
+      <% if user_signed_in? %>
+        <%= form_for @group do |f| %>
+            <input name="group[user_ids][]" value=<%= @user.id %> type="hidden">
+          <%= f.submit value: "友達になる"%>
+        <% end %>
+        <!-- <p><a class="btn btn-primary btn-lg" href="/users/<%= @user.id %>/messages/detail" role="button">このママにメッセージを送る</a></p> -->
       <% end %>
-      </div>
+    </div>
