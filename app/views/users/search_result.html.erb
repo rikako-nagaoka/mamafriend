@@ -5,38 +5,5 @@
 <i class="icon-movie color-gray-light"></i>検索結果
 </h2>
 </header>
-  <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
-   <% @users.each do |user| %>
-     <li>
-         <div class="thumbnail__caption">
-         <a href="/users/<%= user.id %>" class="text-xsmall text-overflow" title="<%= user.nickname %>">
-             <%= user.nickname %>　さん
-          <a>
-          </div>
-     </li>
-     <li>
-         <div class="thumbnail__caption">
-         <h3 class="text-xsmall text-overflow" title="<%= user.adress1 %>">
-             <%= user.adress1 %>　在住
-          </h3>
-          </div>
-     </li>
-     <li>
-         <div class="thumbnail__caption">
-         <h3 class="text-xsmall text-overflow" title="<%= user.age %>">
-             <%= user.age %>　才
-          </h3>
-          </div>
-     </li>
-          <li>
-         <h3 title="<%= user.comment %>">
-             <%= user.comment %>　
-          </h3>
-          </div>
-     </li>
-
-    <% end %>
- </ul>
-
-</div>
+<%= render partial: "user", collection: @users %>
 

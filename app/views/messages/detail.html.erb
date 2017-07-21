@@ -8,26 +8,25 @@
  <%= image_tag ('f_border.gif') %>
 </td>
 </tr>
+<br><br>
  <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
    <% @messages.each do |message| %>
     <li>
-      <%= message.user.nickname %>さん
+      <%= message.user.nickname %>さん　　→　　
       <%= message.body %>
     </li>
     <% end %>
   </ul>
-
+  <br><br>
 <%= form_for [@user,@message] do |f| %>
-  <div class="col-sm-6">メッセージを送る</div>
-  <div class="form-for input-sm" style="padding: 3px;">
+  <div>メッセージを送る</div>
+  <div style="padding: 3px;">
  <%= f.text_area :body, class: "form-conrol" %>
   </div>
-  </div>
-  <br><br>
-        <div class="form-group">
+  <br>
+        <div>
         <%= f.submit "送信", class: "btn btn-primary withripple" %>
       </div>
     <% end %>
 </div>
 
-s

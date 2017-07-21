@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703072247) do
+ActiveRecord::Schema.define(version: 20170711060228) do
 
   create_table "group_users", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -29,14 +29,15 @@ ActiveRecord::Schema.define(version: 20170703072247) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer  "user_id",     limit: 4
-    t.integer  "receiver_id", limit: 4
-    t.text     "body",        limit: 65535
+    t.integer  "group_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.text     "body",       limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "messages", ["user_id"], name: "fk_rails_273a25a7a6", using: :btree
+  add_index "messages", ["group_id"], name: "index_messages_on_group_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
@@ -70,5 +71,6 @@ ActiveRecord::Schema.define(version: 20170703072247) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
 end

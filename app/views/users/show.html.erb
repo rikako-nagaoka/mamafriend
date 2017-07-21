@@ -24,7 +24,7 @@
      <li>
          <div class="thumbnail__caption">
          <h3 class="text-xsmall" title="<%= @user.adress2 %>">
-             住所（市区町村）<%= @user.adress2 %>　
+             住所（市区町村）<%= @user.adress2 %>
           </h3>
           </div>
      </li>
@@ -88,14 +88,18 @@
              一言メッセージ　　<%= @user.comment %>
           </h3>
           </div>
-     </li>
+    </li>
 <br>
     <div class="prof">
-      <% if user_signed_in? %>
+      <% if user_signed_in? && @user.be_friend?(current_user)%>
         <%= form_for @group do |f| %>
-            <input name="group[user_ids][]" value=<%= @user.id %> type="hidden">
-          <%= f.submit value: "友達になる"%>
+
+<!--             <input name="groupgroup[user_ids][]" value=<%= @user.id %> type="hidden"> -->
+        <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.submit "友達になる" %>
         <% end %>
-        <!-- <p><a class="btn btn-primary btn-lg" href="/users/<%= @user.id %>/messages/detail" role="button">このママにメッセージを送る</a></p> -->
       <% end %>
     </div>
+
+
+

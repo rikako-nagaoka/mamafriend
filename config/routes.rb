@@ -6,13 +6,11 @@ Rails.application.routes.draw do
       get 'search'
       get 'search_result'
     end
-    resources :messages, only: [:index, :create]do
-      collection do
-        get 'detail'
-      end
     end
-  end
-  resources :groups, only: [:index, :create]
+  resources :groups, only: [:index, :create]do
+      resources :messages, only: [:index, :create]
+    end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

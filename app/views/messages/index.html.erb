@@ -1,5 +1,9 @@
 <div class="container-fluid">
-<h3>以下のママからメッセージが届いています</h3></div>
+ <% @users.each do |user| %>
+ <%= user.nickname %>さん
+ <% end %>
+ のトークルーム
+ <br><br>
 <tr align="center" valign="middle">
  <td height="30" colspan="7" valign="top">
  <%= image_tag ('f_border.gif') %>
@@ -8,13 +12,24 @@
 </td>
 </tr>
 <br><br>
-<ul>
-<% @messages.each do |message| %>
-<li><tr align="center" valign="middle">
-<a href="/users/<%= message.user.id %>/messages/detail">
-<%= message.user.nickname %>さん</a>
-</li>
-<% end %>
-</ul>
+ <ul>
+   <% @messages.each do |message| %>
+    <li>
+      <%= message.user.nickname %>さん　　→　　
+      <%= message.body %>
+    </li>
+    <% end %>
+  </ul>
+  <br><br>
+
+
+<%= form_for([@group,@message]) do |f| %>
+メッセージを送る
+ <%= f.text_area :body %>
+ <%=f.hidden_field :group_id, value: @group.id %>
+        <%= f.submit "送信", class: "btn btn-primary withripple" %>
+    <% end %>
+</div>
+
 
 

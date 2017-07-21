@@ -15,44 +15,7 @@
 <div>
 <h2>新着ママ友<h2>
 
- <ul style="list-style:none;">
-   <% @users.each do |user| %>
-   <div>
-   <div class="col-sm-4">
-           <div class="mama-box">
-          <div class="panel-body">
-            <li>
-              <h3 datetime="<%= user.created_at %>">
-              <%= time_ago_in_words(user.created_at) %>前
-              <h3>
-            </li>
-             <li>
-                 <a href="/users/<%= user.id %>" title="<%= user.nickname %>">
-                     <%= user.nickname %>　さん
-                  </a>
-             </li>
-             <li>
-                 <h3 title="<%= user.adress1 %>">
-                     <%= user.adress1 %>　在住
-                  </h3>
-             </li>
-             <li>
-                 <h3 title="<%= user.age %>">
-                     <%= user.age %>　才
-                  </h3>
-             </li>
-                  <li>
-                 <h3 title="<%= user.comment %>">
-                     <%= user.comment %>　
-                  </h3>
-             </li>
-      </div>
-    </div>
-</div>
- </div>
-    <% end %>
- </ul>
- 
+ <%= render partial: "user", collection: @users %>
 
  </div>
 
