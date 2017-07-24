@@ -12,18 +12,13 @@
 </td>
 </tr>
 <br><br>
- <ul>
-   <% @messages.each do |message| %>
-    <li>
-      <%= message.user.nickname %>さん　　→　　
-      <%= message.body %>
-    </li>
-    <% end %>
+ <ul class="message">
+ <%= render @messages %>
   </ul>
   <br><br>
 
 
-<%= form_for([@group,@message]) do |f| %>
+<%= form_for [@group,@message], remote: true do |f| %>
 メッセージを送る
  <%= f.text_area :body %>
  <%=f.hidden_field :group_id, value: @group.id %>

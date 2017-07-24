@@ -19,9 +19,10 @@ class MessagesController < ApplicationController
   # # end
 
   def create
-    
+    @group = Group.find(params[:group_id])
+    @messages = @group.messages
     Message.create(create_params)
-    redirect_to action: :index
+
 
   end
 
